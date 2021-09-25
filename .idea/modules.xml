@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../College Project/news/.idea/news.iml" filepath="$PROJECT_DIR$/../../College Project/news/.idea/news.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/news-site-react.iml" filepath="$PROJECT_DIR$/.idea/news-site-react.iml" />
     </modules>
   </component>

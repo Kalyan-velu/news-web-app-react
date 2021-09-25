@@ -1,17 +1,26 @@
 import React from 'react';
 import './App.css';
-import NavAppBar from "./ui/navigation/navBar";
-import Footer from "./ui/footer/Footer";
-import User from "./contents/pages/user/Login";
 
+import User from "./contents/user/Usrauth";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import NavAppBar from "./ui/navigation/navBar";
+import News from './contents/newsContents/newsCategoriesContents'
+import Search from "./contents/newsContents/search/search";
 
 function App() {
     return (
-        <div>
-            <NavAppBar/>
-            <User/>
-            <Footer/>
-        </div>
+        <Router>
+            <div>
+                <NavAppBar/>
+                <Switch>
+                    <Route path="/home" component={News}/>
+                    <Route path="/login" component={User}/>
+                    <Route path="/search" component={Search}/>
+                </Switch>
+
+            </div>
+        </Router>
+
 
     );
 }
