@@ -36,8 +36,13 @@ export default function Drawer() {
 			onClick={toggleDrawer( anchor, false )}
 			onKeyDown={toggleDrawer( anchor, false )}
 		>
-			<ListSubheader component="div" id="nested-list-subheader"
-			               style={{fontSize: 30, paddingTop: 20, paddingLeft: 80}}>NEWS</ListSubheader>
+			<ListSubheader
+				component="div"
+				id="nested-list-subheader"
+				style={{fontSize: 30,
+					paddingTop: 20,
+					paddingLeft: 80}}
+			>NEWS</ListSubheader>
 			<List style={{
 				paddingLeft: 10,
 			}}>

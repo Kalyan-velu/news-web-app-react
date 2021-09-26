@@ -11,25 +11,25 @@ export default function NavAppBar() {
 
 	return (
 		<Box sx={{flexGrow: 1}}>
-			<Toolbar>
+			<Toolbar style={{backgroundColor:"#202020",color:"#7F8693"}}>
 
 				<Drawer style={{paddingRight: "30px"}}/>
 				<Typography style={{flexGrow: 1,}}>News</Typography>
 				<div style={{flexGrow: 1}}/>
-				<Link to="/search">
-					<Box>
-						<Button varient='outlined'>SEARCH
-						</Button></Box>
+				<Link to="/home">
+					<Button style={{color:"#ffff"}} varient='text'>News</Button>
+				</Link>
+				<Link to="/search" >
 
+						<Button style={{color:"#ffff"}} varient='outlined'>SEARCH
+						</Button>
 				</Link>
 				<Link to="/login">
-					<Button varient='text' color="inherit">
+					<Button style={{color:"#ffff"}} varient='text' color="inherit">
 						LOG IN
 					</Button>
 				</Link>
-
 			</Toolbar>
-
 		</Box>
 	);
 }

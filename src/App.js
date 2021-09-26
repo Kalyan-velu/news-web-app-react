@@ -12,6 +12,7 @@ function App() {
         <Router>
             <div>
                 <NavAppBar/>
+
                 <Switch>
                     <Route path="/home" component={News}/>
                     <Route path="/login" component={User}/>
