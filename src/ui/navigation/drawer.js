@@ -7,14 +7,14 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
-import {IconButton, ListItemButton, ListSubheader, Toolbar} from "@mui/material";
-import {Facebook, GitHub, Instagram, LinkedIn, MenuRounded} from "@mui/icons-material";
-import categories, {cate} from "../../data/categories";
+import {IconButton, ListItemButton, ListSubheader} from "@mui/material";
+import {MenuRounded} from "@mui/icons-material";
+import categories, {cate} from "../../components/api/categories";
+import logo from "./Logo.png";
 
 
 export default function Drawer() {
 	const [ drawer, setDrawer ] = useState( {left: false,} );
-
 
 	const toggleDrawer = (anchor, open) => (event) => {
 		if (
@@ -31,7 +31,11 @@ export default function Drawer() {
 
 	const list = (anchor) => (
 		<Box
-			sx={{width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 200}}
+			sx={{
+				width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 200,
+				backgroundColor: "#0A1929",
+				color: "#A5A07C",
+			}}
 			role="presentation"
 			onClick={toggleDrawer( anchor, false )}
 			onKeyDown={toggleDrawer( anchor, false )}
@@ -39,22 +43,26 @@ export default function Drawer() {
 			<ListSubheader
 				component="div"
 				id="nested-list-subheader"
-				style={{fontSize: 30,
-					paddingTop: 20,
-					paddingLeft: 80}}
-			>NEWS</ListSubheader>
+				style={{
+					fontSize: 30,
+					paddingTop: 5,
+					paddingLeft: 45,
+					backgroundColor: "#0A1929"
+				}}
+			><img src={logo} alt="NEWS"/></ListSubheader>
 			<List style={{
 				paddingLeft: 10,
 			}}>
 				{cate.map( (text) => (
 					<ListItem button key={text}>
 						<ListItemText style={{fontColor: '#1111'}} primary={text}/>
+						<Divider/>
 					</ListItem>
 				) )}
 			</List>
 			<Divider/>
 			<List>
-				<ListSubheader component="div" id="nested-list-subheader">
+				<ListSubheader component="div" id="nested-list-subheader" sx={{backgroundColor: "#0A1929"}}>
 					CATEGORIES
 				</ListSubheader>
 				{categories.map( (text) => (
@@ -67,23 +75,6 @@ export default function Drawer() {
 				display: "grid",
 				justifyContent: "center",
 			}}>
-				<Toolbar>
-
-					<IconButton>
-						<Instagram/>
-					</IconButton>
-
-					<IconButton>
-						<Facebook/>
-					</IconButton>
-					<IconButton>
-
-						<LinkedIn/>
-					</IconButton>
-					<IconButton>
-						<GitHub/>
-					</IconButton>
-				</Toolbar>
 			</div>
 
 		</Box>
@@ -96,7 +87,7 @@ export default function Drawer() {
 					size='medium'
 					onClick={toggleDrawer( 'left', true )}
 				>
-					<MenuRounded/>
+					<MenuRounded style={{fill: '#A5A07C'}}/>
 				</IconButton>
 				<SwipeableDrawer
 					anchor={'left'}
