@@ -34,7 +34,7 @@ export default class News extends Component {
 				{this.state.articles.map( item => (
 					<Container style={{paddingBottom: 8}} key={item.id}>
 						<Grid>
-							<Grid container>
+							<Grid containerg>
 								<div className="newsCard">
 									<img
 										alt={item.title}
