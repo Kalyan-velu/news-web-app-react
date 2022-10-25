@@ -25,7 +25,7 @@ function SearchResults() {
 		setGetSearch( search );
 	}
 
-	useEffect( async () => {
+	useEffect(  () => {
 		function fetchData() {
 			instance.get( requests.fetchSearch + `${search}` )
 				.then( res => {
