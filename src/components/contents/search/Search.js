@@ -1,21 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import instance from "../../../api/axios/axios";
-import requests from "../../../api/axios/Requests";
+import instance from "../../api/axios/axios";
+import requests from "../../api/axios/Requests";
 import {Container, Grid, IconButton, TextField} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
-import {Search} from "@mui/icons-material";
+import {Search as SearchIcon} from "@mui/icons-material";
 
 
-function SearchResults() {
-	const [ article, setArticle ] = useState( {articles: []} );
+function Search() {
+	const [ article, setArticle ] = useState( []);
 	let [ search, setSearch ] = useState( '' );
+	let [ searchF, setSearchF ] = useState( '' );
 	const [ getSearch, setGetSearch ] = useState( '' );
-
-
-	console.log( search );
-
-
+   
 	function handleChange(e) {
 		setSearch( e.target.value )
 	}
@@ -27,19 +24,17 @@ function SearchResults() {
 
 	useEffect(  () => {
 		function fetchData() {
+			//destructring
 			instance.get( requests.fetchSearch + `${search}` )
-				.then( res => {
-					setArticle( {articles: res.data.articles} );
+				.then( (res) => {
+					setArticle( res.data.articles );
 					console.log( res.data )
-
+					setSearchF(search)
 				} )
 		}
-
 		fetchData();
 		console.log( fetchData )
 	}, [ getSearch ] );
-
-
 	return (
 		<div>
 			<section style={{textAlign: "center"}}>
@@ -54,16 +49,15 @@ function SearchResults() {
 				<IconButton
 					onClick={getSearchResult}
 					type="submit"
-
 					aria-label="search"
 				>
-					<Search/>
+					<SearchIcon/>
 				</IconButton></section>
 			<ul>
-				<h4>Results for {search}</h4>
+				<h4>Results for {searchF}</h4>
 				<Divider/>
 				{/* eslint-disable-next-line react/jsx-key */}
-				{article.articles.map( item => (
+				{article.map( item => (
 					<Container style={{paddingBottom: 8}} key={item.id}>
 						<Grid container>
 							<h1 style={{fontSize: 18}}>
@@ -86,5 +80,5 @@ function SearchResults() {
 	)
 }
 
-export default SearchResults;
+export default Search;
 
