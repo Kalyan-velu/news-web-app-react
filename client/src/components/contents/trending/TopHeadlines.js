@@ -14,7 +14,7 @@ export default function Trending () {
 	useEffect(()=>{
 		async function getArticles(){
 			try {
-				await instance.get( requests.fetchTopInHeadlines )
+				await instance.get( requests.fetchTopHeadlines )
 				.then( (res) => {
 				console.log(res );
 				setArticles( res.data.articles)

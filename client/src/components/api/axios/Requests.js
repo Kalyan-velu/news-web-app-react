@@ -2,7 +2,7 @@ import categories from "../categories";
 
 const requests =
 	{
-		fetchTopHeadlines: `/everything?f&sortBy=popularity`,
+		fetchTopHeadlines: `/api/top-headlines`,
 		fetchSearch: `/everything?q=`,
 		fetchTopInHeadlines: `/top-headlines?country=in`,
 		fetchBusiness: `/everything?q=business`,
