@@ -1,12 +1,7 @@
-import categories from "../categories";
+import api from "./axios"
 
-const requests =
-	{
-		fetchTopHeadlines: `/api/top-headlines`,
-		fetchSearch: `/everything?q=`,
-		fetchTopInHeadlines: `/top-headlines?country=in`,
-		fetchBusiness: `/everything?q=business`,
-		fetchGeneral: `/top-headlines?country=in&category=${categories}`
-	}
-export default requests;
-
+export const fetchTopHeadlines=()=>api.get(`/top-headlines`)
+export const fetchSearch=({search})=>api.get( `/search/${search}`)
+export const fetchTopCHeadlines=(countryName)=>api.get(`/top/${countryName}`)
+export const fetchCategory=({categories})=>api.get(`/categories/${categories}`)
+	

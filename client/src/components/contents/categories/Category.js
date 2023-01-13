@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Grid} from "@mui/material";
-import instance from "../../api/axios/axios";
-import requests from "../../api/axios/Requests";
-
+import { fetchCategory } from "../../api/axios/Requests";
 import '../trending/trending.css'
 import Article from '../Article';
 import { useParams } from 'react-router-dom';
@@ -14,10 +12,10 @@ export default function Category () {
 	useEffect(()=>{
 		async function getArticles(){
 			try {
-				await instance.get( `/top-headlines?country=in&category=${id}`)
+				await fetchCategory({categories:id})
 				.then( (res) => {
 				console.log(res );
-				setArticles( res.data.articles)
+				setArticles( res.data)
 				} )
 			} catch (e) {
 				console.log(e)

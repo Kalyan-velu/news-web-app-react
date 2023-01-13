@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import instance from "../../api/axios/axios";
-import requests from "../../api/axios/Requests";
 import {Container, Grid, IconButton, TextField} from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import {Search as SearchIcon} from "@mui/icons-material";
+import { fetchSearch } from '../../api/axios/Requests';
 
 
 function Search() {
@@ -19,22 +18,21 @@ function Search() {
 
 	function getSearchResult(e) {
 		e.preventDefault();
-		setGetSearch( search );
+		setGetSearch(search);
 	}
 
 	useEffect(  () => {
-		function fetchData() {
+		async function fetchData() {
 			//destructring
-			instance.get( requests.fetchSearch + `${search}` )
+			await fetchSearch({search:getSearch})
 				.then( (res) => {
-					setArticle( res.data.articles );
+					setArticle( res.data );
 					console.log( res.data )
-					setSearchF(search)
 				} )
 		}
 		fetchData();
 		console.log( fetchData )
-	}, [ getSearch ] );
+	}, [getSearch] );
 	return (
 		<div>
 			<section style={{textAlign: "center"}}>
@@ -52,10 +50,12 @@ function Search() {
 					aria-label="search"
 				>
 					<SearchIcon/>
-				</IconButton></section>
+				</IconButton>
+			</section>
 			<ul>
-				<h4>Results for {searchF}</h4>
+				<h4>Results for {getSearch}</h4>
 				<Divider/>
+				{article.length===0?<h1>Search for something</h1>:null}
 				{/* eslint-disable-next-line react/jsx-key */}
 				{article.map( item => (
 					<Container style={{paddingBottom: 8}} key={item.id}>

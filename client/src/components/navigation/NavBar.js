@@ -19,9 +19,6 @@ export default function NavAppBar() {
 					<Link className={({isActive})=>isActive?"navbar-link active":"navbar-link"} to="/">
 						Top-Headlines
 					</Link>
-					<Link className={({isActive})=>isActive?"navbar-link active":"navbar-link"} to="/global">
-						Global
-					</Link>
 					<Link className={({isActive})=>isActive?"navbar-link active":"navbar-link"} to="/search">
 						Search
 					</Link>

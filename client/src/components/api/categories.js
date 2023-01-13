@@ -12,6 +12,21 @@ export const cate = [
 	"India"
 ]
 
+export const country=[{
+	_id:"1",
+	name:'India',
+	short:'IN'
+	},{
+	_id:"2",
+	name:'United Stated',
+	short:'US'
+	},{
+		_id:"3",
+		name:"France",
+		short:"FR"
+	}
+]
+
 const categories = [
 	"business",
 	"entertainment",

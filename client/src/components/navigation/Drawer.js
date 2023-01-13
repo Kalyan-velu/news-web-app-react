@@ -3,7 +3,6 @@ import {useState} from 'react';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
 import { Nav } from '../../styled-components/NavStyled';
 import {ListItemButton} from "@mui/material";
 import categories from "../api/categories";
@@ -37,11 +36,6 @@ export default function Drawer() {
 					<ListItem >
 					<NavLink className={({isActive})=>isActive?"link-active l-active":"link-active"} to="/">
 						Top-Headlines
-					</NavLink>
-					</ListItem>
-					<ListItem >
-					<NavLink className={({isActive})=>isActive?"link-active l-active":"link-active"} to="/global">
-						Global
 					</NavLink>
 					</ListItem>
 					<ListItem >

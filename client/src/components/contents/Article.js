@@ -17,8 +17,8 @@ const Article = ({item}) => {
 	 }));
 
   return (
-   <Grid xs={12} md={6} lg={4}>					
-   <Item  >
+   <Grid item xs={12} md={6} lg={4}>					
+   <Item >
    <div className="newsCard">
       <img alt={item.title} src={item.urlToImage}style={{width: '100%',borderRadius:"0.4rem"}}/>
    </div>
