@@ -1,4 +1,4 @@
-# News Website 
+# News Website [Link](https://news-search-easy.netlify.app/)
 
 ## Purpose 
 The purpose of this website is to **serve** you news from accross the world.
