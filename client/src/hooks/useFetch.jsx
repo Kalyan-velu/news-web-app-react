@@ -4,7 +4,7 @@ import { fetchCategory, fetchSearch, fetchTopHeadlines } from '../api/axios/Requ
 const useFetch = ({ type, query = "", category = false }) => {
    const [result, setResults] = useState(null)
    const [error, setError] = useState(null)
-   console.log({ type, category, result })
+   console.log({ type, category, result ,error})
    useEffect(() => {
       async function fetchData() {
          try {
