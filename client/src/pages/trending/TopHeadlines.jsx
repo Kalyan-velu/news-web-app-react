@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { Grid} from "@mui/material";
+
 import {fetchTopCHeadlines, fetchTopHeadlines} from "../../api/axios/Requests";
-import './trending.css'
+import './trending.scss'
 import Article from '../Article';
 import BasicSelect from '../SelectCategory';
 
@@ -38,15 +38,6 @@ export default function Trending () {
   };
 	return(
 		<div className="trending">
-			<div className="tab-header">
-				<h2>Trending Articles</h2>
-				<BasicSelect handleChange={handleChange} countryName={countryName}/>
-			</div>
-			<Grid  container margin={"auto"}>
-				{articles?.map( (item,index) => (	
-					<Article key={index} item={item}/>
-					))}
-			</Grid>
-			</div>
-		)
-}
+			Trending
+		</div>
+	)}

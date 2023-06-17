@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { Grid} from "@mui/material";
 import { fetchCategory } from "../../api/axios/Requests";
-import '../trending/trending.css'
-import Article from '../Article';
+import '../trending/trending.scss'
 import { useParams } from 'react-router-dom';
 export default function Category () {
 
@@ -30,11 +28,7 @@ export default function Category () {
 			<div className="tab-header">
 				<h2>{id.toUpperCase()} Articles</h2>
 			</div>
-			<Grid  container margin={"auto"}>
-				{articles?.map( (item,index) => (	
-					<Article key={index} item={item}/>
-					))}
-			</Grid>
+
 			</div>
 		)
 }
