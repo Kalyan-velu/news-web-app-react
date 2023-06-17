@@ -1,10 +1,16 @@
 import * as React from 'react';
-import './App.css';
-function App(){
-    return (
-    <div className="app">
+import CoreLayout from "./common/layout/CoreLayout";
+import Navbar from "./common/components/navigation";
+import Routes from './pages';
 
-    </div>
+function App() {
+    return (
+        <>
+            <CoreLayout>
+                <Navbar />
+                <Routes />
+            </CoreLayout>
+        </>
     );
 }
 export default App;

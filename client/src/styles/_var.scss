@@ -1,13 +1,23 @@
-:root{
-  --bg-color:$bg-dark;
-  --font-default:12px;
+:root {
+  --bg-dark: #090b0b;
+  --bg-dark-soft: #1a1d23;
+
+  --cadet-grey: #a4a9ad;
+  --yamin-blue: #445e93;
+  --white: #f1f2f6;
+  --font-default: 12px;
+
+  --color-w: var(--white);
+  --color-d: var(--bg-dark);
 }
 
 // Colors
-$bg-dark: #090B0B;
-$bg-dark-soft:#1A1D23;
+$dark: var(--bg-dark);
+$dark-soft: var(--bg-dark-soft);
 
-$cadet-grey:#A4A9AD;
-$anti-flash-white:#F1F2F6;
+$cadet-grey: var(--cadet-grey);
+$anti-flash-white: var(--white);
+
+$yamin-blue: var(--yamin-blue);
 
 //font

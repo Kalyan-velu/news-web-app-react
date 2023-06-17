@@ -1,10 +1,20 @@
 import React from 'react'
 import { NavLink as NL } from 'react-router-dom'
-export const NavLink=({className,to,sx,children})=>{
+
+/**
+ *
+ * @param className string
+ * @param to string
+ * @param children {JSX.Element}
+ * @returns {JSX.Element}
+ * @constructor
+ */
+export const NavLink=({className,to,children})=>{
    const style={
       textDecoration:"none"
    }
    return (
-      <NL style={style} sx={sx} className={className} to={to} >{children} </NL>
+
+      <NL className={({isActive})=> isActive===false ?className:`${className} active`} to={to} >{children} </NL>
    )
 }

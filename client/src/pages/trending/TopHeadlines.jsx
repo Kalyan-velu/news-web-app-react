@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import {fetchTopCHeadlines, fetchTopHeadlines} from "../../api/axios/Requests";
 import './trending.scss'
 import Article from '../Article';
-import BasicSelect from '../SelectCategory';
+import BasicSelect from '../SelectCategory.jsx';
 
 export default function Trending () {
 	const [articles, setArticles] = useState([])

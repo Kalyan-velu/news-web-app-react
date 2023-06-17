@@ -1,0 +1,42 @@
+@import "../../../../../styles/var";
+.block {
+  width: calc(100% - 2.5rem);
+  padding: 1rem;
+  &__header {
+    all: unset;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0.4rem;
+    justify-items: stretch;
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-height: 30rem;
+      width: calc(100% - 0.022rem - 1.022rem - 1rem);
+      padding: 0.8rem;
+      overflow: auto;
+      text-overflow: ellipsis;
+      background: hsla(0, 2%, 39%, 0.2);
+      border-radius: 0.7rem;
+      box-shadow: 0 4px 30px rgba(162, 153, 153, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(100, 97, 97, 0.3);
+
+      &__link {
+        text-decoration: none;
+        color: var(--yamin-blue);
+      }
+    }
+  }
+}

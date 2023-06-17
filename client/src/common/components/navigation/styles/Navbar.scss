@@ -1,0 +1,57 @@
+@import "../../../../styles/var";
+
+.nav {
+  position: static;
+  width: 100%;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--dark);
+  height: 5rem;
+
+  color: var(--color);
+
+  &__items {
+    display: inherit;
+    gap: 3rem;
+    &__link {
+      display: inherit;
+      gap: 0.7rem;
+      //flex-direction: column-reverse;
+      //font-size: 1rem;
+      align-items: center;
+      color: $cadet-grey;
+      text-decoration: none;
+      font-size: large;
+    }
+  }
+
+  &__options {
+    &__btn {
+      all: unset;
+      border: 0.022rem solid $dark-soft;
+      border-radius: 0.9rem;
+      padding: 1rem;
+      z-index: 10;
+      transition: all ease-out 3ms;
+      /* From https://css.glass */
+      background: $dark-soft;
+      box-shadow: 0 4px 30px rgba(125, 122, 122, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid $dark-soft;
+      &:hover {
+        background-color: $cadet-grey;
+        color: $dark-soft;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.active {
+  color: $anti-flash-white;
+}
