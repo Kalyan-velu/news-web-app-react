@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 const ArticleBlockItems = ({ article }) => {
-   const { source, title = "Heleediu" } = article
+   const { source, title } = article
    return (
       <>
          <div className='block__container__item'>
