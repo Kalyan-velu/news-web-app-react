@@ -3,7 +3,7 @@ import ArticleBlockItems from './ArticleBlockItems'
 import { fetchTopHeadlines, fetchCategory } from "../../../../../api/axios/Requests"
 import "../styles/ArticleBlock.scss"
 
-const ArticleBlock = ({ listName: type, category }) => {
+const ArticleBlock = ({ listName: type, category = false }) => {
   const [result, setResults] = useState(null)
   const [error, setError] = useState(null)
   useEffect(() => {
