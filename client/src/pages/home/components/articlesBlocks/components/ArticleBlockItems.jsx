@@ -5,7 +5,11 @@ const ArticleBlockItems = ({ article }) => {
    return (
       <>
          <div aria-describedby={title} title={description} className='block__container__item'>
-            <Link className='block__container__item__link' to={"/"}><h2><a className='block__container__item__link' href={url} target="_blank" rel="noopener noreferrer">{title}</a></h2></Link>
+            {/* <Link className='block__container__item__link' to={"/"}> */}
+               <h2>
+                  <a className='block__container__item__link' href={url} target="_blank" rel="noopener noreferrer">{title}</a>
+               </h2>
+            {/* </Link> */}
             <p style={{ textAlign: "right" }}>
                {source.name}
             </p>
