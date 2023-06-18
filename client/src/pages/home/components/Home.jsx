@@ -12,9 +12,9 @@ const Home = () => {
             <ArticleBlock key={listName} listName={listName} />
          ))}
 
-         {/* {category.map(category => (
+         {category.map(category => (
             <ArticleBlock key={category} category={true} listName={category} />
-         ))} */}
+         ))}
 
       </div>
    )
