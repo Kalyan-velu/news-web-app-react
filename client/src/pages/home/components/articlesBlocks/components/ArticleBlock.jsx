@@ -30,7 +30,7 @@ const ArticleBlock = ({ listName: type, category }) => {
     fetchData()
   }, [type, category])
   return (
-    <div className='block'>
+    <div aria-describedby={type} className='block'>
       <marquee><h1 className='block__header'>{type.toUpperCase()}</h1></marquee>
       <div className="block__container">
         {result ?

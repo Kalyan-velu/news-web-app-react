@@ -9,12 +9,10 @@ import { NavLink as NL } from 'react-router-dom'
  * @returns {JSX.Element}
  * @constructor
  */
-export const NavLink=({className,to,children})=>{
-   const style={
-      textDecoration:"none"
-   }
+export const NavLink = ({ className, to, children }) => {
+   
    return (
 
-      <NL className={({isActive})=> isActive===false ?className:`${className} active`} to={to} >{children} </NL>
+      <NL aria-details='Navigation Link' className={({ isActive }) => isActive === false ? className : `${className} active`} to={to} >{children} </NL>
    )
 }
