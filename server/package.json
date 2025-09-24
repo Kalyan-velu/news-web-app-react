@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
-    "postpublish": "cd ../client && npm run build && cd ../server && npm install && npm start",
+    "postpublish": "cd ../client && npm install && npm run build && cd ../server && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "kalyan-jyoti-borah",
